@@ -2,12 +2,46 @@
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-
+	<display-name>Java Guide By Nilay</display-name>
 	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/spring/root-context.xml</param-value>
 	</context-param>
+	
+	<!--  Filter and Listener Learning -->
+	<context-param>
+		<description>Type of Furniture</description>
+		<param-name>typeSelected</param-name>
+		<param-value>Home Furniture</param-value>
+	</context-param>
+	
+	<filter>
+		<filter-name>shallowEtagHeaderFilter</filter-name>
+		<filter-class>org.springframework.web.filter.ShallowEtagHeaderFilter</filter-class>
+	</filter>
+
+
+	<filter-mapping>
+		<filter-name>shallowEtagHeaderFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<listener>
+		<listener-class>in.nilayshah.servlet.MyServletContextListener</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>ListenerTester</servlet-name>
+		<servlet-class>in.nilayshah.servlet.ListenerTester</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ListenerTester</servlet-name>
+		<url-pattern>/ListenerTester</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Listener and Filter Learning End -->
 	
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
 	<listener>
@@ -29,5 +63,6 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
 
 </web-app>

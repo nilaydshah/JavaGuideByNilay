@@ -1,4 +1,4 @@
-package com.hp.springmvcpoc;
+package in.nilayshah.app;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -15,16 +15,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Handles requests for the application home page.
  */
 @Controller
-public class NilayController {
+public class HomeController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(NilayController.class);
+	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/nilay", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		logger.info("Welcome Nilay! The client locale is {}.", locale);
+		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -33,7 +33,7 @@ public class NilayController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "nilay";
+		return "home";
 	}
 	
 }
