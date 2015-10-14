@@ -1,4 +1,4 @@
-package in.nilayshah.threading;
+package in.nilayshah.reflection;
 
 public class Department
 {

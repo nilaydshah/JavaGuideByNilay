@@ -1,4 +1,4 @@
-package in.nilayshah.threading;
+package in.nilayshah.reflection;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -10,7 +10,7 @@ public class ReflectionTest
     {
 
 	try{
-	    Class MyClass = Class.forName("in.nilayshah.threading.MyClass");
+	    Class MyClass = Class.forName("in.nilayshah.reflection.MyClass");
 	    /*Method[] methods = MyClass.getMethods();
 	    for(Method m: methods){
 		System.out.println("Method Name: "+m.getName());
