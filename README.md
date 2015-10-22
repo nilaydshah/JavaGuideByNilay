@@ -1,9 +1,11 @@
-JavaGuideByNilay
+# Java J2EE Examples
 ================
 
 Java and J2EE examples.
 
-Topics covered:
-Threads
-Listeners
-Reflection
+<ol>Topics covered:
+<li>Algorithms</li>
+<li>Threads</li>
+<li>Listeners</li>
+<li>Reflection</li>
+</ol>
