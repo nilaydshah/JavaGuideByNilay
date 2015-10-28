@@ -30,6 +30,44 @@ public class BinaryTree {
     queue.add(tempNode.right);  
   }  
  }  
+ 
+ // prints spiral/zigzag level order  
+ public static void spiralOrZigzagLevelOrder(TreeNode root) {  
+        if(root==null) return;   
+        Stack<TreeNode> stack=new Stack<TreeNode>();  
+        stack.push(root);  
+          
+        boolean directionflag=false;  
+        while(!stack.isEmpty())  
+        {  
+            Stack<TreeNode> tempStack=new Stack<TreeNode>();  
+          
+            while(!stack.isEmpty())  
+            {  
+                TreeNode tempNode=stack.pop();  
+             System.out.printf("%d ",tempNode.data);  
+                if(!directionflag)   
+                {  
+                    if(tempNode.left!=null)   
+                     tempStack.push(tempNode.left);  
+                    if(tempNode.right!=null)   
+                     tempStack.push(tempNode.right);  
+                }else  
+                {  
+                    if(tempNode.right!=null)   
+                     tempStack.push(tempNode.right);  
+                    if(tempNode.left!=null)   
+                     tempStack.push(tempNode.left);  
+                }  
+            }  
+            // for changing direction  
+            directionflag=!directionflag;   
+        
+            stack=tempStack;   
+        }  
+       
+    }  
+
  public static void main(String[] args)  
  {  
   BinaryTree bi=new BinaryTree();  
@@ -37,6 +75,13 @@ public class BinaryTree {
   TreeNode rootNode=createBinaryTree();  
   System.out.println("Level Order traversal of binary tree will be:");  
   levelOrderTraversal(rootNode);  
+  
+   BinaryTree biSpiral=new BinaryTree();  
+  // Creating a binary tree  
+  TreeNode rootNodeSpiral=createBinaryTree();  
+  System.out.println("Spiral/Zigzag traversal of binary tree :");  
+  spiralOrZigzagLevelOrder(rootNodeSpiral);  
+
  }  
    
  public static TreeNode createBinaryTree()  
