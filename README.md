@@ -1,6 +1,4 @@
-# Java J2EE Examples
-====
-
+# DSA & Coding Examples
 <ol>Topics covered:
 <li>Algorithms</li>
 <li>Threads</li>
